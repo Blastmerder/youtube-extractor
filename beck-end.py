@@ -102,6 +102,8 @@ async def read_urls_songs(names: GetNames):
 @app.post("/download_urls_songs")
 async def download_urls_songs(urls: GetURLs):
     uuid4 = uuid.uuid4()
+    if not os.path.isdir(f'./users/'):
+        os.mkdir(f'./users/')
     os.mkdir(f'./users/{uuid4}')
     os.mkdir(f'./users/{uuid4}/video')
     os.mkdir(f'./users/{uuid4}/tmp')
