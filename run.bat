@@ -1,0 +1,1 @@
+uvicorn beck-end:app --reload
